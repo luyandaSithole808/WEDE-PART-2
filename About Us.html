@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>About Us</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         
+        <section class="hero-banner" aria-label="MONDISE LOGISTICS service highlights">
+    <div class="hero-slide is-active">
+        <div class="hero-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none"><rect x="4" y="26" width="34" height="20" rx="2" fill="#E8871E"/><path d="M38 32h12l8 8v6H38V32Z" fill="#F4F6F8" opacity="0.85"/><circle cx="16" cy="48" r="6" fill="#0B2E4F"/><circle cx="46" cy="48" r="6" fill="#0B2E4F"/></svg>
+        </div>
+        <h2>Local Deliveries</h2>
+        <p>Reliable delivery services for packages and goods within local areas.</p>
+    </div>
+ 
+    <div class="hero-slide">
+        <div class="hero-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none"><path d="M6 44h52" stroke="#F4F6F8" stroke-width="2" opacity="0.5"/><rect x="10" y="24" width="30" height="18" rx="2" fill="#E8871E"/><path d="M40 30h10l8 6v6H40V30Z" fill="#F4F6F8" opacity="0.85"/><circle cx="20" cy="46" r="5" fill="#0B2E4F"/><circle cx="48" cy="46" r="5" fill="#0B2E4F"/></svg>
+        </div>
+        <h2>Long-Distance Transportation</h2>
+        <p>Transportation solutions for businesses and customers requiring deliveries over long distances.</p>
+    </div>
+ 
+    <div class="hero-slide">
+        <div class="hero-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none"><rect x="6" y="20" width="36" height="24" rx="2" fill="#E8871E"/><rect x="12" y="26" width="8" height="8" fill="#0B2E4F" opacity="0.5"/><rect x="24" y="26" width="8" height="8" fill="#0B2E4F" opacity="0.5"/><path d="M42 28h10l8 6v10H42V28Z" fill="#F4F6F8" opacity="0.85"/><circle cx="18" cy="48" r="6" fill="#0B2E4F"/><circle cx="48" cy="48" r="6" fill="#0B2E4F"/></svg>
+        </div>
+        <h2>Freight Transportation</h2>
+        <p>Transportation solutions for businesses moving larger quantities of goods.</p>
+    </div>
+ 
+    <div class="hero-slide">
+        <div class="hero-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none"><path d="M8 46V22l24-10 24 10v24" stroke="#E8871E" stroke-width="3" fill="none"/><rect x="16" y="30" width="10" height="16" fill="#F4F6F8" opacity="0.85"/><rect x="38" y="30" width="10" height="16" fill="#F4F6F8" opacity="0.85"/></svg>
+        </div>
+        <h2>Business Logistics</h2>
+        <p>Logistics solutions designed to help businesses manage their transportation and delivery needs.</p>
+    </div>
+ 
+    <div class="hero-dots">
+        <button type="button" class="hero-dot is-active" aria-label="Show slide 1"></button>
+        <button type="button" class="hero-dot" aria-label="Show slide 2"></button>
+        <button type="button" class="hero-dot" aria-label="Show slide 3"></button>
+        <button type="button" class="hero-dot" aria-label="Show slide 4"></button>
+    </div>
+</section>
+ 
+<style>
+    .hero-banner {
+        position: relative;
+        overflow: hidden;
+        height: 340px;
+        border-radius: 6px;
+        margin-bottom: 2.5rem;
+        background: linear-gradient(135deg, #0B2E4F 0%, #298f14 100%);
+        border-left: 5px solid #e81e83;
+    }
+ 
+    .hero-slide {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1.5rem 2rem;
+        opacity: 0;
+        transform: translateX(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        pointer-events: none;
+    }
+ 
+    .hero-slide.is-active {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+ 
+    .hero-icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 1rem;
+    }
+ 
+    .hero-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+ 
+    .hero-slide h2 {
+        color: #FFFFFF;
+        margin-bottom: 0.5rem;
+        font-size: 1.6rem;
+    }
+ 
+    .hero-slide p {
+        color: #E2E8F0;
+        max-width: 46ch;
+        margin: 0;
+    }
+ 
+    .hero-dots {
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 0.6rem;
+        z-index: 2;
+    }
+ 
+    .hero-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.35);
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+ 
+    .hero-dot.is-active {
+        background: #E8871E;
+        transform: scale(1.2);
+    }
+ 
+    @media (max-width: 640px) {
+        .hero-banner {
+            height: 300px;
+        }
+ 
+        .hero-slide h2 {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+ 
+<script>
+    (function () {
+        var root = document.querySelectorAll('.hero-banner');
+        root.forEach(function (banner) {
+            var slides = banner.querySelectorAll('.hero-slide');
+            var dots = banner.querySelectorAll('.hero-dot');
+            var current = 0;
+            var timer;
+ 
+            function show(index) {
+                slides[current].classList.remove('is-active');
+                dots[current].classList.remove('is-active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('is-active');
+                dots[current].classList.add('is-active');
+            }
+ 
+            function next() {
+                show(current + 1);
+            }
+ 
+            function start() {
+                timer = setInterval(next, 4000);
+            }
+ 
+            function stop() {
+                clearInterval(timer);
+            }
+ 
+            dots.forEach(function (dot, i) {
+                dot.addEventListener('click', function () {
+                    show(i);
+                    stop();
+                    start();
+                });
+            });
+ 
+            banner.addEventListener('mouseenter', stop);
+            banner.addEventListener('mouseleave', start);
+ 
+            start();
+        });
+    })();
+</script>
+        
+    
+            
+    </head>
+    <body style="background-color: rgb(30, 255, 0);"> 
+    <header>
+    <nav>
+        <img src="images/LOGO2.png" style="width:195px; height:215px;">
+        <a href="home page.html">Home</a>
+        <a href="About Us.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="quote.html">Quote</a>
+
+    </nav>
+    </header>
+    <main>
+
+         <h1><u><i>ABOUT MONDISE LOGISTICS</i></u> </h1>
+         <p>
+            MONDISE LOGISTICS is a Logistics and transportation compony focused on providing reliable,
+            efficient and professional delivery solutions to individuals and businesses.
+         </p>
+
+         <h3>Our Mission</h3>
+
+         <p>
+            Our mission is to provide safe reliable and affordable logistics services while building 
+            long-lasting relationships with our customers.
+         </p>
+
+          <h3>Our Vision</h3>
+
+          <p>
+            Our vision is to become a trusted logistics partner know for excellent service, relaibility
+            and customer satisfaction.
+          </p>
+
+          <h3>Our Values</h3>
+
+          <ul>
+            <li>Relaibility</li>
+            <li>Professionalism</li>
+            <li>Safety</li>
+            <li>Intergrity</li>
+            <li>Customer Satisfaction</li>
+            <li>Teamwork</li>
+          </ul>
+         
+
+
+    </main>
+        <footer>
+
+            <hr>
+
+            <h2>MONDISE LOGISTICS</h2>
+
+            <p>
+                <strong>ONE BIG FAMILY</strong>
+            </p>
+
+            <p>
+                &copy; 2026 MONDISE LOGISTICS, 
+                All rights reserved.
+            </p>
+
+            <nav>
+                <a href="home page.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="quote.html">Quote</a>
+            </nav>
+        </footer>
+    
+    </body>
+</html> 
